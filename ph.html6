@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        .search-box {
+            display: flex;
+            justify-content: space-between;
+            background: #f1f1f1;
+            padding: 8px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 16px;
+            padding: 5px;
+            flex: 1;
+        }
+
+        button {
+            border: none;
+            background: #ffcc00;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .weather-icon {
+            font-size: 50px;
+            margin: 15px 0;
+        }
+
+        .temp {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .condition {
+            font-size: 18px;
+            font-weight: 500;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>🌍 Weather App</h2>
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city name...">
+            <button onclick="getWeather()">🔍</button>
+        </div>
+
+        <div class="weather-details">
+            <div class="weather-icon">☀️</div>
+            <h3 id="cityName">City Name</h3>
+            <p class="temp" id="temperature">--°C</p>
+            <p class="condition" id="weatherCondition">Condition: --</p>
+        </div>
+    </div>
+
+    <script>
+        function getWeather() {
+            let city = document.getElementById("cityInput").value || "Unknown City";
+            document.getElementById("cityName").innerText = city;
+            document.getElementById("temperature").innerText = "25°C";
+            document.getElementById("weatherCondition").innerText = "Sunny ☀️";
+        }
+    </script>
+
+</body>
+</html>
